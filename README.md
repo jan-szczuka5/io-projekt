@@ -4,3 +4,5 @@
 *Szymon Pasternak, nr indeksu: 148146,*  
 *Julia Mularczyk, nr indeksu: 148062,*  
 *Hanna Pieniążek, nr indeksu: 148159.*  
+
+Tablica z zadaniami: [Trello](https://trello.com/b/tkpaYw29)
