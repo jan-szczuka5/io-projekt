@@ -1,4 +1,4 @@
-![example workflow](https://github.com/jan-szczuka5/io-projekt/blob/main/.github/workflows/ci.yml/badge.svg)
+![example workflow](https://github.com/jan-szczuka5/io-projekt/actions/workflows/ci.yml/badge.svg)
 # io-projekt
 ### Repozytorium na projekt z inżynierii oprogramowania grupy I2-1-Alfa (BuildingInfo). Członkowie grupy:  
 *Jan Szczuka, nr indeksu: 148075,*  
