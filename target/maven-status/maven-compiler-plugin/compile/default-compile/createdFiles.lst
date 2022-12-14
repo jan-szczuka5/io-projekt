@@ -1,3 +1,8 @@
+pl\put\poznan\buildinginfo\logic\DataLoader.class
+pl\put\poznan\buildinginfo\logic\Room.class
+pl\put\poznan\buildinginfo\logic\Floor.class
+pl\put\poznan\buildinginfo\logic\Building.class
+pl\put\poznan\buildinginfo\logic\Location.class
 pl\put\poznan\transformer\app\TextTransformerApplication.class
 pl\put\poznan\transformer\rest\TextTransformerController.class
 pl\put\poznan\transformer\logic\TextTransformer.class
