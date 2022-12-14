@@ -1,12 +1,13 @@
 package pl.put.poznan.buildinginfo.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Floor implements Location{
     private int id;
     private String name;
 
-    List<Room> rooms;
+    List<Room> rooms = new ArrayList<>();
 
     public Floor(String name) {
         this.id = 5;
@@ -15,6 +16,13 @@ public class Floor implements Location{
 
     public void addRoom(Room room) {
         rooms.add(room);
+    }
+
+    // Funkcja służąca głównie do sprawdzenia czy działa loader
+    public void getRoomNames() {
+        for (Room r: rooms) {
+            System.out.println("\t\tRoom name: " + r.getName());
+        }
     }
 
     public float getTotalArea() {
@@ -51,12 +59,12 @@ public class Floor implements Location{
 
     @Override
     public int getId() {
-        return 0;
+        return id;
     }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override

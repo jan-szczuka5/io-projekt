@@ -14,9 +14,8 @@ import java.util.List;
 
 public class DataLoader {
 
-    void loadData() throws IOException, JSONException {
-        // String filePath = "C:\\Users\\Dell\\Desktop\\Studia\\V Semestr\\Inżynieria Oprogramowania\\Projekt\\io-projekt\\src\\main\\resources";
-        String filePath = "./resources/data.json";
+    public void loadData() throws IOException, JSONException {
+        String filePath = "src\\main\\resources\\data.json";
         String jsonString = new String(Files.readAllBytes(Paths.get(filePath))); //assign your JSON String here
         JSONObject obj = new JSONObject(jsonString);
 
@@ -25,7 +24,7 @@ public class DataLoader {
         JSONArray buildings = obj.getJSONArray("buildings");
         for (int i = 0; i < buildings.length(); i++) {
             String buildingName = buildings.getJSONObject(i).getString("name");
-            Building newBuilding = new Building();
+            Building newBuilding = new Building(buildingName);
             JSONArray floors = buildings.getJSONObject(i).getJSONArray("floors");
             for (int j = 0; j < floors.length(); j++) {
                 String floorName = floors.getJSONObject(j).getString("name");
@@ -34,9 +33,9 @@ public class DataLoader {
                 JSONArray rooms = floors.getJSONObject(j).getJSONArray("rooms");
                 for (int k = 0; k < rooms.length(); k++) {
 
-                    String roomName = floors.getJSONObject(j).getString("name");
-                    int area = floors.getJSONObject(j).getInt("area");
-                    int cube = floors.getJSONObject(j).getInt("cube");
+                    String roomName = rooms.getJSONObject(k).getString("name");
+                    int area = rooms.getJSONObject(k).getInt("area");
+                    int cube = rooms.getJSONObject(k).getInt("cube");
                     Room newRoom = new Room(roomName, area, cube);
                     newFloor.addRoom(newRoom);
                 }
@@ -44,6 +43,11 @@ public class DataLoader {
             }
             buildingsList.add(newBuilding);
         }
+
         // Printowanie czy działa
+        for (Building b: buildingsList) {
+            System.out.println("Building name: " + b.getName());
+            b.getFloorNames();
+        }
     }
 }

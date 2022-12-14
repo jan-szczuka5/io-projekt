@@ -1,15 +1,28 @@
 package pl.put.poznan.buildinginfo.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Building implements Location{
     private int id;
     private String name;
 
-    List<Floor> floors;
+    List<Floor> floors = new ArrayList<>();
+
+    public Building(String name) {
+        this.name = name;
+    }
 
     public void addFloor(Floor floor) {
         floors.add(floor);
+    }
+
+    // Funkcja służąca głównie do sprawdzenia czy działa loader
+    public void getFloorNames() {
+        for (Floor f: floors) {
+            System.out.println("\tFloor name: " + f.getName());
+            f.getRoomNames();
+        }
     }
 
     public float getTotalArea() {
