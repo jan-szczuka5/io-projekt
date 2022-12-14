@@ -1,0 +1,94 @@
+{
+  "buildings": [
+    {
+      "name": "ABC Building",
+      "floors": [
+        {
+          "name": "Ground Floor",
+          "rooms": [
+            {
+              "name": "Lobby",
+              "area": 100,
+              "cube": 1000
+            },
+            {
+              "name": "Conference Room 1",
+              "area": 50,
+              "cube": 500
+            },
+            {
+              "name": "Conference Room 2",
+              "area": 75,
+              "cube": 750
+            }
+          ]
+        },
+        {
+          "name": "First Floor",
+          "rooms": [
+            {
+              "name": "Office 1",
+              "area": 200,
+              "cube": 2000
+            },
+            {
+              "name": "Office 2",
+              "area": 225,
+              "cube": 2250
+            },
+            {
+              "name": "Office 3",
+              "area": 150,
+              "cube": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "XYZ Building",
+      "floors": [
+        {
+          "name": "Ground Floor",
+          "rooms": [
+            {
+              "name": "Lobby",
+              "area": 10,
+              "cube": 100
+            },
+            {
+              "name": "Conference Room 1",
+              "area": 5,
+              "cube": 50
+            },
+            {
+              "name": "Conference Room 2",
+              "area": 7.5,
+              "cube": 75
+            }
+          ]
+        },
+        {
+          "name": "First Floor",
+          "rooms": [
+            {
+              "name": "Office 1",
+              "area": 20,
+              "cube": 200
+            },
+            {
+              "name": "Office 2",
+              "area": 22.5,
+              "cube": 225
+            },
+            {
+              "name": "Office 3",
+              "area": 15,
+              "cube": 150
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
