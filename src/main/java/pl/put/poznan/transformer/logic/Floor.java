@@ -9,11 +9,19 @@ public class Floor implements Location{
     private String name;
     private List<Room> rooms;
 
-    private float TotalArea;
-    private float TotalCube;
-    private float TotalLight;
-    private float TotalHeating;
+    private float TotalArea = 0F;
+    private float TotalCube = 0F;
+    private float TotalLight = 0F;
+    private float TotalHeating = 0F;
 
+
+    public Floor(String name) {
+        this.id = 5;
+        this.name = name;
+    }
+    public void addRoom(Room room) {
+        rooms.add(room);
+    }
     public float getTotalArea(){
         for(Room r : rooms){
             TotalArea += r.getArea();
