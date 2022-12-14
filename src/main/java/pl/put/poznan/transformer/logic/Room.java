@@ -8,7 +8,14 @@ public class Room implements Location {
     private float light;
     private int id;
     private String name;
-
+    public Room(String name, int area, int cube){
+        this.id = 10;
+        this.name = name;
+        this.area = (float) area;
+        this.cube = (float) cube;
+        this.heating = 34.5F;
+        this.light = 12.34F;
+    }
     public float getArea() {
         return area;
     }

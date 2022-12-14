@@ -8,11 +8,14 @@ public class Building implements Location{
     private String name;
     private List<Floor> floors;
 
-    private float TotalArea;
-    private float TotalCube;
-    private float TotalLight;
-    private float TotalHeating;
+    private float TotalArea = 0F;
+    private float TotalCube = 0F;
+    private float TotalLight = 0F;
+    private float TotalHeating = 0F;
 
+    public void addFloor(Floor floor) {
+        floors.add(floor);
+    }
     public float getTotalArea(){
         for(Floor f : floors){
             TotalArea += f.getTotalArea();
