@@ -13,6 +13,10 @@ public class Building implements Location{
     private float TotalLight = 0F;
     private float TotalHeating = 0F;
 
+    public Building(String name){
+        this.id = 1;
+        this.name = name;
+    }
     public void addFloor(Floor floor) {
         floors.add(floor);
     }
