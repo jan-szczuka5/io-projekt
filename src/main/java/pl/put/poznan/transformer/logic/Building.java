@@ -8,10 +8,7 @@ public class Building implements Location{
     private String name;
     private List<Floor> floors;
 
-    private float TotalArea = 0F;
-    private float TotalCube = 0F;
-    private float TotalLight = 0F;
-    private float TotalHeating = 0F;
+
 
     public Building(String name){
         this.id = 1;
@@ -21,24 +18,28 @@ public class Building implements Location{
         floors.add(floor);
     }
     public float getTotalArea(){
+        float TotalArea = 0F;
         for(Floor f : floors){
             TotalArea += f.getTotalArea();
         }
         return TotalArea;
     }
     public float getTotalCube(){
+        float TotalCube = 0F;
         for(Floor f : floors){
             TotalCube += f.getTotalCube();
         }
         return TotalCube;
     }
     public float getTotalLight(){
+        float TotalLight = 0F;
         for(Floor f : floors){
             TotalLight += f.getTotalLight();
         }
         return TotalLight;
     }
     public float getTotalHeating(){
+        float TotalHeating = 0F;
         for(Floor f : floors){
             TotalHeating += f.getTotalHeating();
         }
