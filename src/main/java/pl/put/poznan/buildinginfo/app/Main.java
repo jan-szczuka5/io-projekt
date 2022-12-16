@@ -16,7 +16,7 @@ public class Main {
         try {
             List<Building> buildingsList = new ArrayList<>();
             buildingsList = dataLoader.loadData("src\\main\\resources\\data.json");
-            System.out.println("Total cube for first building: " + buildingsList.get(1).getTotalArea());
+            System.out.println("Total cube for first building: " + buildingsList.get(1).getArea());
         } catch (IOException e) {
             System.out.println("IO EXCEPTION");
             e.printStackTrace();

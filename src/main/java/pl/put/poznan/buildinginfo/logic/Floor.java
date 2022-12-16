@@ -25,37 +25,9 @@ public class Floor implements Location{
         }
     }
 
-    public double getTotalArea() {
-        double total = 0F;
-        for(Room r: rooms) {
-            total += r.getArea();
-        }
-        return total;
-    }
 
-    public double getTotalCube() {
-        double total = 0F;
-        for(Room r: rooms) {
-            total += r.getCube();
-        }
-        return total;
-    }
 
-    public double getTotalHeating() {
-        double total = 0F;
-        for(Room r: rooms) {
-            total += r.getHeating();
-        }
-        return total;
-    }
 
-    public double getTotalLight() {
-        double total = 0F;
-        for(Room r: rooms) {
-            total += r.getLight();
-        }
-        return total;
-    }
 
     @Override
     public int getId() {
@@ -69,21 +41,37 @@ public class Floor implements Location{
 
     @Override
     public double getArea() {
-        return 0;
+        double total = 0F;
+        for(Room r: rooms) {
+            total += r.getArea();
+        }
+        return total;
     }
 
     @Override
     public double getCube() {
-        return 0;
+        double total = 0F;
+        for(Room r: rooms) {
+            total += r.getCube();
+        }
+        return total;
     }
 
     @Override
     public double getHeating() {
-        return 0;
+        double total = 0F;
+        for(Room r: rooms) {
+            total += r.getHeating();
+        }
+        return total;
     }
 
     @Override
     public double getLight() {
-        return 0;
+        double total = 0F;
+        for(Room r: rooms) {
+            total += r.getLight();
+        }
+        return total;
     }
 }

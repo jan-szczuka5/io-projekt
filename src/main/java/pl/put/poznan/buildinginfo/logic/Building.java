@@ -26,38 +26,6 @@ public class Building implements Location{
         }
     }
 
-    public double getTotalArea() {
-        double total = 0F;
-        for(Floor f: floors) {
-            total += f.getTotalArea();
-        }
-        return total;
-    }
-
-    public double getTotalCube() {
-        double total = 0F;
-        for(Floor f: floors) {
-            total += f.getTotalCube();
-        }
-        return total;
-    }
-
-    public double getTotalHeating() {
-        double total = 0F;
-        for(Floor f: floors) {
-            total += f.getTotalHeating();
-        }
-        return total;
-    }
-
-    public double getTotalLight() {
-        double total = 0F;
-        for(Floor f: floors) {
-            total += f.getTotalLight();
-        }
-        return total;
-    }
-
     @Override
     public int getId() {
         return id;
@@ -70,21 +38,37 @@ public class Building implements Location{
 
     @Override
     public double getArea() {
-        return 0;
+        double total = 0F;
+        for(Floor f: floors) {
+            total += f.getArea();
+        }
+        return total;
     }
 
     @Override
     public double getCube() {
-        return 0;
+        double total = 0F;
+        for(Floor f:floors) {
+            total += f.getCube();
+        }
+        return total;
     }
 
     @Override
     public double getHeating() {
-        return 0;
+        double total = 0F;
+        for(Floor f:floors) {
+            total += f.getHeating();
+        }
+        return total;
     }
 
     @Override
     public double getLight() {
-        return 0;
+        double total = 0F;
+        for(Floor f:floors) {
+            total += f.getLight();
+        }
+        return total;
     }
 }
