@@ -55,7 +55,7 @@ public class Building implements Location{
     }
 
      /**
-     * Counts the total area of the building based on the areas of all the floors in that building
+     * Calculates the total area of the building based on the areas of all the floors in that building
      *
      * @return total area of the building
      */
@@ -70,7 +70,7 @@ public class Building implements Location{
     }
 
      /**
-     * Counts the total cubic capacity of the building based on the cubic capacities of all the floors in that building
+     * Calculates the total cubic capacity of the building based on the cubic capacities of all the floors in that building
      *
      * @return total cubic capacity of the building
      */
@@ -85,7 +85,7 @@ public class Building implements Location{
     }
 
     /**
-     * Counts the total energy used for heating in the building based on the energy used for heating on all the floors in that building
+     * Calculates the total energy used for heating in the building based on the energy used for heating on all the floors in that building
      *
      * @return total energy used for heating in the building
      */
@@ -100,7 +100,7 @@ public class Building implements Location{
     }
 
     /**
-     * Counts the total lighting power of the building based on the lighting power of all the floors in that building
+     * Calculates the total lighting power of the building based on the lighting power of all the floors in that building
      *
      * @return total lighting power of the building
      */
