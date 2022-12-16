@@ -4,18 +4,18 @@ public class Room implements Location{
     int id;
     String name;
 
-    float area;
-    float cube;
-    float heating;
-    float light;
+    double area;
+    double cube;
+    double heating;
+    double light;
 
-    public Room(String name, int area, int cube){
-        this.id = 10;
+    public Room(int id, String name, double area, double cube, double heating, double light){
+        this.id = id;
         this.name = name;
-        this.area = (float) area;
-        this.cube = (float) cube;
-        this.heating = 34.5F;
-        this.light = 12.34F;
+        this.area = area;
+        this.cube = cube;
+        this.heating = heating;
+        this.light = light;
     }
 
     @Override
@@ -29,22 +29,22 @@ public class Room implements Location{
     }
 
     @Override
-    public float getArea() {
+    public double getArea() {
         return area;
     }
 
     @Override
-    public float getCube() {
+    public double getCube() {
         return cube;
     }
 
     @Override
-    public float getHeating() {
+    public double getHeating() {
         return heating;
     }
 
     @Override
-    public float getLight() {
+    public double getLight() {
         return light;
     }
 }

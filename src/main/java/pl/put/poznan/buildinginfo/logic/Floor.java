@@ -9,8 +9,8 @@ public class Floor implements Location{
 
     List<Room> rooms = new ArrayList<>();
 
-    public Floor(String name) {
-        this.id = 5;
+    public Floor(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
@@ -25,32 +25,32 @@ public class Floor implements Location{
         }
     }
 
-    public float getTotalArea() {
-        float total = 0F;
+    public double getTotalArea() {
+        double total = 0F;
         for(Room r: rooms) {
             total += r.getArea();
         }
         return total;
     }
 
-    public float getTotalCube() {
-        float total = 0F;
+    public double getTotalCube() {
+        double total = 0F;
         for(Room r: rooms) {
             total += r.getCube();
         }
         return total;
     }
 
-    public float getTotalHeating() {
-        float total = 0F;
+    public double getTotalHeating() {
+        double total = 0F;
         for(Room r: rooms) {
             total += r.getHeating();
         }
         return total;
     }
 
-    public float getTotalLight() {
-        float total = 0F;
+    public double getTotalLight() {
+        double total = 0F;
         for(Room r: rooms) {
             total += r.getLight();
         }
@@ -68,22 +68,22 @@ public class Floor implements Location{
     }
 
     @Override
-    public float getArea() {
+    public double getArea() {
         return 0;
     }
 
     @Override
-    public float getCube() {
+    public double getCube() {
         return 0;
     }
 
     @Override
-    public float getHeating() {
+    public double getHeating() {
         return 0;
     }
 
     @Override
-    public float getLight() {
+    public double getLight() {
         return 0;
     }
 }

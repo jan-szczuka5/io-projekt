@@ -6,11 +6,11 @@ public interface Location {
 
     String getName();
 
-    float getArea();
+    double getArea();
 
-    float getCube();
+    double getCube();
 
-    float getHeating();
+    double getHeating();
 
-    float getLight();
+    double getLight();
 }
