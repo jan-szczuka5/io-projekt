@@ -14,6 +14,12 @@ import java.util.List;
 
 public class DataLoader {
 
+    private String Json;
+    /*
+    public DataLoader(String Json) {
+        this.Json = Json;
+    }
+*/
     public List<Building> loadData(String filePath) throws IOException, JSONException {
         // String filePath = "src\\main\\resources\\data.json";
         String jsonString = new String(Files.readAllBytes(Paths.get(filePath))); //assign your JSON String here

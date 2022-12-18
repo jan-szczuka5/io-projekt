@@ -26,6 +26,7 @@ public class Building implements Location{
         }
     }
 
+
     @Override
     public int getId() {
         return id;
