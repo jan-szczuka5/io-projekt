@@ -4,39 +4,51 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.buildinginfo.logic.BuildingInfo;
-import java.util.Arrays;
+import pl.put.poznan.buildinginfo.logic.Location;
+
 
 @RestController
 @RequestMapping(value = "/buildinginfo", produces = "application/json")
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
+    private BuildingInfo buildingInfo = new BuildingInfo();
 
 
-    @GetMapping("/load")
-    public String loadData() {
-        // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo buildingInfo = new BuildingInfo();
-        buildingInfo.loadALlBuildings();
-        return buildingInfo.getAllBuildings();
+    @GetMapping("/getArea/{id}")
+    public String getArea(@PathVariable String id) {
+        logger.debug(id);
+        Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
+        if(location == null) {
+            return "Wrong id";
+        }
+        return String.valueOf(location.getArea());
     }
 
-    @GetMapping("/loadfromjson/{json}")
-    public String loadDataFromJson(@PathVariable String json) {
-        logger.debug(json);
-        // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo buildingInfo = new BuildingInfo();
+    @GetMapping("/getCube/{id}")
+    public String getCube(@PathVariable String id) {
+        logger.debug(id);
+        Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
+        if(location == null) {
+            return "Wrong id";
+        }
+        return String.valueOf(location.getCube());
+    }
+
+    @GetMapping("/getLightPerArea/{id}")
+    public String getLightPerArea(@PathVariable String id) {
+        logger.debug(id);
+        Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
+        if(location == null) {
+            return "Wrong id";
+        }
+        return String.valueOf(location.getLight()/location.getArea());
+    }
+
+    @PostMapping("/loadfromjson")
+    @ResponseBody
+    public void loadDataFromJson(@RequestBody String json) {
         buildingInfo.loadALlBuildingsFromJson(json);
-        return buildingInfo.getAllBuildings();
-    }
-
-    @GetMapping("/loadandread/{number}")
-    public String loadAndRead(@PathVariable String number) {
-        logger.debug(number);
-        // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo buildingInfo = new BuildingInfo();
-        buildingInfo.loadALlBuildings();
-        return buildingInfo.getOneBuilding(Integer.parseInt(number));
     }
 
 

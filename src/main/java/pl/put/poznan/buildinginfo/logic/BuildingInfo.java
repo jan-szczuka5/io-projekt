@@ -1,42 +1,32 @@
 package pl.put.poznan.buildinginfo.logic;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
+import org.json.JSONException;
 import java.util.List;
 
 public class BuildingInfo
 {
     private List<Building> allBuildings;
 
-    public String getAllBuildings()
+
+    public Location findSpecificLocationById(int id)
     {
-
-        return allBuildings.get(0).getName();
-
-    }
-
-    public String getOneBuilding(int number)
-    {
-
-        return allBuildings.get(number).getName();
-
-    }
-
-
-    public void loadALlBuildings()
-    {
-        DataLoader dataLoader = new DataLoader();
-        try {
-            allBuildings = dataLoader.loadData("src\\main\\resources\\data.json");
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
+        for(Building b: allBuildings) {
+            if(b.getId() == id) {
+                return b;
+            }
+            for(Floor f: b.floors) {
+                if(f.getId() == id) {
+                    return f;
+                }
+                for(Room r: f.rooms) {
+                    if(r.getId() == id) {
+                        return r;
+                    }
+                }
+            }
         }
+        return null;
     }
 
     public void loadALlBuildingsFromJson(String jsonString)
