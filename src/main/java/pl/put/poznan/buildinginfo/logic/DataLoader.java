@@ -46,7 +46,7 @@ public class DataLoader {
                     double cube = rooms.getJSONObject(k).getDouble("cube");
                     double heating = rooms.getJSONObject(k).getDouble("heating");
                     double light = rooms.getJSONObject(k).getDouble("light");
-                    Room newRoom = new Room(roomId, roomName, area, cube, heating, light);
+                    Room newRoom = new Room(roomId, roomName, (float) area, (float) cube, (float) heating, (float) light);
                     newFloor.addRoom(newRoom);
                 }
                 newBuilding.addFloor(newFloor);

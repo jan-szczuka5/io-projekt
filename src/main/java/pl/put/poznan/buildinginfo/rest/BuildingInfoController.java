@@ -12,7 +12,7 @@ import pl.put.poznan.buildinginfo.logic.Location;
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
-    private BuildingInfo buildingInfo = new BuildingInfo();
+    private final BuildingInfo buildingInfo = new BuildingInfo();
 
 
     @PostMapping("/loadfromjson")

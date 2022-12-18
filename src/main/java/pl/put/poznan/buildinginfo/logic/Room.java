@@ -8,13 +8,13 @@ package pl.put.poznan.buildinginfo.logic;
  */
 
 public class Room implements Location{
-    int id;
-    String name;
+    private int id;
+    private String name;
 
-    double area;
-    double cube;
-    double heating;
-    double light;
+    private float area;
+    private float cube;
+    private float heating;
+    private float light;
     
      /**
      * @param id id of the room
@@ -25,19 +25,13 @@ public class Room implements Location{
      * @param light lighting power of the room
      */
     
-    public Room(int id, String name, double area, double cube, double heating, double light){
+    public Room(int id, String name, float area, float cube, float heating, float light){
         this.id = id;
         this.name = name;
         this.area = area;
         this.cube = cube;
         this.heating = heating;
         this.light = light;
-    }
-
-    public Room findRoomById(int id)
-    {
-        if (this.getId() == id)  { return this; }
-        else { return null; }
     }
 
     @Override
@@ -51,22 +45,22 @@ public class Room implements Location{
     }
 
     @Override
-    public double getArea() {
+    public float getArea() {
         return area;
     }
 
     @Override
-    public double getCube() {
+    public float getCube() {
         return cube;
     }
 
     @Override
-    public double getHeating() {
+    public float getHeating() {
         return heating;
     }
 
     @Override
-    public double getLight() {
+    public float getLight() {
         return light;
     }
 }

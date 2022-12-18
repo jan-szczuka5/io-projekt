@@ -15,11 +15,11 @@ public class BuildingInfo
             if(b.getId() == id) {
                 return b;
             }
-            for(Floor f: b.floors) {
+            for(Floor f: b.getFloors()) {
                 if(f.getId() == id) {
                     return f;
                 }
-                for(Room r: f.rooms) {
+                for(Room r: f.getRooms()) {
                     if(r.getId() == id) {
                         return r;
                     }

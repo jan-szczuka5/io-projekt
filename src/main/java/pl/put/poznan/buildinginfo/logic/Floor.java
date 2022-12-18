@@ -14,7 +14,7 @@ public class Floor implements Location{
     private int id;
     private String name;
 
-    List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms = new ArrayList<>();
 
      /**
      * @param id id of the floor
@@ -36,16 +36,9 @@ public class Floor implements Location{
         rooms.add(room);
     }
 
-    // Funkcja służąca głównie do sprawdzenia czy działa loader
-    public void getRoomNames() {
-        for (Room r: rooms) {
-            System.out.println("\t\tRoom name: " + r.getName());
-        }
+    public List<Room> getRooms() {
+        return rooms;
     }
-
-
-
-
 
     @Override
     public int getId() {
@@ -64,8 +57,8 @@ public class Floor implements Location{
      */
     
     @Override
-    public double getArea() {
-        double total = 0F;
+    public float getArea() {
+        float total = 0F;
         for(Room r: rooms) {
             total += r.getArea();
         }
@@ -79,8 +72,8 @@ public class Floor implements Location{
      */
     
     @Override
-    public double getCube() {
-        double total = 0F;
+    public float getCube() {
+        float total = 0F;
         for(Room r: rooms) {
             total += r.getCube();
         }
@@ -94,8 +87,8 @@ public class Floor implements Location{
      */
     
     @Override
-    public double getHeating() {
-        double total = 0F;
+    public float getHeating() {
+        float total = 0F;
         for(Room r: rooms) {
             total += r.getHeating();
         }
@@ -109,8 +102,8 @@ public class Floor implements Location{
      */
     
     @Override
-    public double getLight() {
-        double total = 0F;
+    public float getLight() {
+        float total = 0F;
         for(Room r: rooms) {
             total += r.getLight();
         }
