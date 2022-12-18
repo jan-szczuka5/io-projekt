@@ -15,11 +15,7 @@ public class BuildingInfoController
     private final BuildingInfo buildingInfo = new BuildingInfo();
 
 
-    @PostMapping("/loadfromjson")
-    @ResponseBody
-    public void loadDataFromJson(@RequestBody String json) {
-        buildingInfo.loadALlBuildingsFromJson(json);
-    }
+
 
     @PostMapping("/getArea/{id}")
     @ResponseBody
