@@ -31,7 +31,7 @@ public class DataLoader {
         for (int i = 0; i < buildings.length(); i++) {
 
             int buildingId = buildings.getJSONObject(i).getInt("id");
-            String buildingName = null;
+            String buildingName = "No name provided";
             if (buildings.getJSONObject(i).has("name")) {
                 buildingName = buildings.getJSONObject(i).getString("name");
             }
@@ -41,7 +41,7 @@ public class DataLoader {
             JSONArray floors = buildings.getJSONObject(i).getJSONArray("floors");
             for (int j = 0; j < floors.length(); j++) {
                 int floorId = floors.getJSONObject(j).getInt("id");
-                String floorName = null;
+                String floorName = "No name provided";
                 if (floors.getJSONObject(j).has("name")) {
                     floorName = floors.getJSONObject(j).getString("name");
                 }
@@ -51,7 +51,7 @@ public class DataLoader {
                 for (int k = 0; k < rooms.length(); k++) {
                     int roomId = rooms.getJSONObject(k).getInt("id");
 
-                    String roomName = null;
+                    String roomName = "No name provided";
                     if (rooms.getJSONObject(k).has("name")) {
                         roomName = rooms.getJSONObject(k).getString("name");
                     }
@@ -69,15 +69,6 @@ public class DataLoader {
 
         return buildingsList;
 
-        // Printowanie czy działa
-//        for (Building b: buildingsList) {
-//            System.out.println("Building name: " + b.getName());
-//            b.getFloorNames();
-//        }
-//
-//        for (Building b: buildingsList) {
-//            System.out.println("Total area of a building: " + b.getTotalArea());
-//        }
 
     }
 }

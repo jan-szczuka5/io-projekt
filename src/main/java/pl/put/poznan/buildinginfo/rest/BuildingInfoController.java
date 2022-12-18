@@ -7,36 +7,30 @@ import pl.put.poznan.buildinginfo.logic.BuildingInfo;
 import java.util.Arrays;
 
 @RestController
-@RequestMapping("/{text}")
+@RequestMapping(value = "/buildinginfo", produces = "application/json")
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                      @RequestParam(value="functionName", defaultValue="upper,escape") String[] functionName) {
 
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(functionName));
-
+    @GetMapping("/load")
+    public String loadData() {
         // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo buildingInfo = new BuildingInfo(functionName);
+        BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildings();
         return buildingInfo.getAllBuildings();
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody String[] functionName) {
-
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(functionName));
-
+    @GetMapping("/loadandread/{number}")
+    public String loadAndRead(@PathVariable String number) {
+        logger.debug(number);
         // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo buildingInfo = new BuildingInfo(functionName);
+        BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildings();
-        return buildingInfo.getAllBuildings();
+        return buildingInfo.getOneBuilding(Integer.parseInt(number));
     }
+
+
+
+
 }

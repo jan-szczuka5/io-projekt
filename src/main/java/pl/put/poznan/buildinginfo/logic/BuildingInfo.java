@@ -12,7 +12,6 @@ import java.util.List;
 
 public class BuildingInfo
 {
-    private final String[] functionName;
     private List<Building> allBuildings;
 
     public String getAllBuildings()
@@ -22,10 +21,13 @@ public class BuildingInfo
 
     }
 
-    public BuildingInfo(String[] functionName)
+    public String getOneBuilding(int number)
     {
-        this.functionName = functionName;
+
+        return allBuildings.get(number).getName();
+
     }
+
 
     public void loadALlBuildings()
     {
