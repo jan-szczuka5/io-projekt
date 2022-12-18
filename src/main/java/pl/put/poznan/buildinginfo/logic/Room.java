@@ -34,6 +34,12 @@ public class Room implements Location{
         this.light = light;
     }
 
+    public Room findRoomById(int id)
+    {
+        if (this.getId() == id)  { return this; }
+        else { return null; }
+    }
+
     @Override
     public int getId() {
         return id;

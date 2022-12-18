@@ -1,8 +1,9 @@
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Floor.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\DataLoader.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\transformer\app\TextTransformerApplication.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\transformer\rest\TextTransformerController.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Location.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Room.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\transformer\logic\TextTransformer.java
-C:\Users\Dell\Desktop\Studia\V Semestr\Inżynieria Oprogramowania\Projekt\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Building.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\app\BuildingInfoApplication.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\app\Main.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Building.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Location.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Room.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\Floor.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\BuildingInfo.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\rest\BuildingInfoController.java
+C:\Users\julia\OneDrive\Pulpit\projekt IO\io-projekt\src\main\java\pl\put\poznan\buildinginfo\logic\DataLoader.java

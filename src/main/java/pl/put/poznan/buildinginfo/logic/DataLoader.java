@@ -4,19 +4,12 @@ package pl.put.poznan.buildinginfo.logic;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.io.*;
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataLoader {
 
-    public List<Building> loadData(String filePath) throws IOException, JSONException {
-        // String filePath = "src\\main\\resources\\data.json";
-        String jsonString = new String(Files.readAllBytes(Paths.get(filePath))); //assign your JSON String here
+    public List<Building> loadDataFromJson(String jsonString) throws JSONException {
         JSONObject obj = new JSONObject(jsonString);
 
         List<Building> buildingsList = new ArrayList<>();
@@ -25,7 +18,7 @@ public class DataLoader {
         for (int i = 0; i < buildings.length(); i++) {
 
             int buildingId = buildings.getJSONObject(i).getInt("id");
-            String buildingName = null;
+            String buildingName = "No name provided";
             if (buildings.getJSONObject(i).has("name")) {
                 buildingName = buildings.getJSONObject(i).getString("name");
             }
@@ -35,7 +28,7 @@ public class DataLoader {
             JSONArray floors = buildings.getJSONObject(i).getJSONArray("floors");
             for (int j = 0; j < floors.length(); j++) {
                 int floorId = floors.getJSONObject(j).getInt("id");
-                String floorName = null;
+                String floorName = "No name provided";
                 if (floors.getJSONObject(j).has("name")) {
                     floorName = floors.getJSONObject(j).getString("name");
                 }
@@ -45,7 +38,7 @@ public class DataLoader {
                 for (int k = 0; k < rooms.length(); k++) {
                     int roomId = rooms.getJSONObject(k).getInt("id");
 
-                    String roomName = null;
+                    String roomName = "No name provided";
                     if (rooms.getJSONObject(k).has("name")) {
                         roomName = rooms.getJSONObject(k).getString("name");
                     }
@@ -60,18 +53,6 @@ public class DataLoader {
             }
             buildingsList.add(newBuilding);
         }
-
         return buildingsList;
-
-        // Printowanie czy działa
-//        for (Building b: buildingsList) {
-//            System.out.println("Building name: " + b.getName());
-//            b.getFloorNames();
-//        }
-//
-//        for (Building b: buildingsList) {
-//            System.out.println("Total area of a building: " + b.getTotalArea());
-//        }
-
     }
 }
