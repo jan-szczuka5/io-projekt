@@ -1,0 +1,31 @@
+{
+  "buildings": [
+    {
+      "id": 1000,
+      "name": "ABC Building",
+      "floors": [
+        {
+          "id": 101,
+          "name": "Ground Floor",
+          "rooms": [
+            {
+              "id": 11,
+              "area": 100.50,
+              "cube": 1250.25,
+              "heating": 23.45,
+              "light": 12.22
+            },
+            {
+              "id": 12,
+              "name": "Conference Room 1",
+              "area": 100.50,
+              "cube": 2400.25,
+              "heating": 13.45,
+              "light": 82.22
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

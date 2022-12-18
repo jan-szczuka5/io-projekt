@@ -37,8 +37,16 @@ public class BuildingInfo
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
+    }
 
-
+    public void loadALlBuildingsFromJson(String jsonString)
+    {
+        DataLoader dataLoader = new DataLoader();
+        try {
+            allBuildings = dataLoader.loadDataFromJson(jsonString);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
