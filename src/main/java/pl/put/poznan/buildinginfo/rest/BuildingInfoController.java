@@ -15,8 +15,17 @@ public class BuildingInfoController
     private BuildingInfo buildingInfo = new BuildingInfo();
 
 
-    @GetMapping("/getArea/{id}")
-    public String getArea(@PathVariable String id) {
+    @PostMapping("/loadfromjson")
+    @ResponseBody
+    public void loadDataFromJson(@RequestBody String json) {
+        buildingInfo.loadALlBuildingsFromJson(json);
+    }
+
+    @PostMapping("/getArea/{id}")
+    @ResponseBody
+    public String GetArea(@RequestBody String json, @PathVariable String id) {
+        buildingInfo.loadALlBuildingsFromJson(json);
+
         logger.debug(id);
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
@@ -25,8 +34,11 @@ public class BuildingInfoController
         return String.valueOf(location.getArea());
     }
 
-    @GetMapping("/getCube/{id}")
-    public String getCube(@PathVariable String id) {
+    @PostMapping("/getCube/{id}")
+    @ResponseBody
+    public String GetCube(@RequestBody String json, @PathVariable String id) {
+        buildingInfo.loadALlBuildingsFromJson(json);
+
         logger.debug(id);
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
@@ -35,8 +47,11 @@ public class BuildingInfoController
         return String.valueOf(location.getCube());
     }
 
-    @GetMapping("/getLightPerArea/{id}")
-    public String getLightPerArea(@PathVariable String id) {
+    @PostMapping("/getLightPerArea/{id}")
+    @ResponseBody
+    public String GetLightPerArea(@RequestBody String json, @PathVariable String id) {
+        buildingInfo.loadALlBuildingsFromJson(json);
+
         logger.debug(id);
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
@@ -44,14 +59,5 @@ public class BuildingInfoController
         }
         return String.valueOf(location.getLight()/location.getArea());
     }
-
-    @PostMapping("/loadfromjson")
-    @ResponseBody
-    public void loadDataFromJson(@RequestBody String json) {
-        buildingInfo.loadALlBuildingsFromJson(json);
-    }
-
-
-
 
 }
