@@ -3,6 +3,9 @@ package pl.put.poznan.buildinginfo.logic;
 /**
  * This class handles operations regarding the room
  *
+ * @author julia-bit
+ * @author jan-szczuka5
+ * @author Johnybonny
  * @author hannapieniazek
  * @version 1.0
  */
