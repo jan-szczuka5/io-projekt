@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * This class handles operations regarding the whole building
  *
+ * @author julia-bit
+ * @author jan-szczuka5
+ * @author Johnybonny
  * @author hannapieniazek
  * @version 1.0
  */
