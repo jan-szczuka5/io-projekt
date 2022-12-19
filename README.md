@@ -36,3 +36,6 @@ Następnie należy wpisać **ht<span>tp://</span>localhost:8080/KOMENDA**. Przy 
 **getArea/{id}** - zwraca powierzchnię lokalizacji o podanym numerze id,  
 **getCube/{id}** - zwraca kubaturę lokalizacji o podanym numerze id,  
 **getLightPerArea/{id}** - zwraca moc oświetlania w przeliczeniu na jednostkę powierzchni lokalizacji o podanym numerze id.
+
+## Diagram UML:
+![Diagram.png](https://github.com/jan-szczuka5/io-projekt/blob/main/Diagram.png)
