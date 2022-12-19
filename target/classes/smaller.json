@@ -2,7 +2,7 @@
   "buildings": [
     {
       "id": 1000,
-      "name": "Deuce Tatum",
+      "name": "Building 1",
       "floors": [
         {
           "id": 101,
@@ -17,7 +17,7 @@
             },
             {
               "id": 12,
-              "name": "Conference Room 1",
+              "name": "Conference Room",
               "area": 100.50,
               "cube": 2400.25,
               "heating": 13.45,

@@ -12,14 +12,11 @@ import pl.put.poznan.buildinginfo.logic.Location;
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
-    private final BuildingInfo buildingInfo = new BuildingInfo();
-
-
-
 
     @PostMapping("/getArea/{id}")
     @ResponseBody
     public String GetArea(@RequestBody String json, @PathVariable String id) {
+        BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
 
         logger.debug(id);
@@ -33,6 +30,7 @@ public class BuildingInfoController
     @PostMapping("/getCube/{id}")
     @ResponseBody
     public String GetCube(@RequestBody String json, @PathVariable String id) {
+        BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
 
         logger.debug(id);
@@ -46,6 +44,7 @@ public class BuildingInfoController
     @PostMapping("/getLightPerArea/{id}")
     @ResponseBody
     public String GetLightPerArea(@RequestBody String json, @PathVariable String id) {
+        BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
 
         logger.debug(id);
