@@ -67,4 +67,22 @@ public class BuildingInfoController
         return result;
     }
 
+    @PostMapping("/getHeatingPerCube/{id}")
+    @ResponseBody
+    public String GetHeatingPerCube(@RequestBody String json, @PathVariable String id) {
+        logger.info("Loading json file");
+        BuildingInfo buildingInfo = new BuildingInfo();
+        buildingInfo.loadALlBuildingsFromJson(json);
+
+        logger.info("Calculating heating per cube for: " + id);
+        Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
+        if(location == null) {
+            logger.info("Wrong id");
+            return "Wrong id";
+        }
+        String result = String.valueOf(location.getHeating()/location.getCube());
+        logger.info("Heating per cube calculated successfully: " + result);
+        return result;
+    }
+
 }
