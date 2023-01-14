@@ -1,6 +1,5 @@
 pl\put\poznan\buildinginfo\logic\DataLoader.class
 pl\put\poznan\buildinginfo\logic\Room.class
-pl\put\poznan\buildinginfo\app\Main.class
 pl\put\poznan\buildinginfo\logic\BuildingInfo.class
 pl\put\poznan\buildinginfo\logic\Floor.class
 pl\put\poznan\buildinginfo\app\BuildingInfoApplication.class
