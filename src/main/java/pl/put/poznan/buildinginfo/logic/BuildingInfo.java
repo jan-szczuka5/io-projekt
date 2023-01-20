@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.put.poznan.buildinginfo.rest.BuildingInfoController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BuildingInfo
@@ -53,5 +54,21 @@ public class BuildingInfo
         }
     }
 
+    public List<Room> findHeatingAboveLevel(Building b, float level)
+    {
+        List<Room> rooms = new ArrayList<>();
+        logger.debug("Search for heating above level started");
+        for(Floor f: b.getFloors()) {
+            logger.debug("Searching in floors list");
+            for(Room r: f.getRooms()) {
+                logger.debug("Searching in rooms list");
+                if(r.getHeating() > level) {
+                    logger.debug("Found heating above level");
+                    rooms.add(r);
+                }
+            }
+        }
+        return rooms;
+    }
 
 }
