@@ -30,6 +30,16 @@ public class Floor implements Location{
     }
 
      /**
+     * Sets a list of rooms of the floor
+     *
+     * @param rooms list of rooms on the floor
+     */
+
+    public void setRooms(List<Room> rooms){
+        this.rooms = rooms;
+    }
+
+     /**
      * Adds a room object to the list of rooms on the floor
      *
      * @param room room on the floor

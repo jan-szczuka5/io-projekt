@@ -32,9 +32,12 @@ public class Building implements Location{
     /**
      * Adds a floor object to the list of floors in the building
      *
-     * @param floor floor in the building
+     * @param floors floor in the building
      */
-    
+
+    public void setFloors(List<Floor> floors){
+        this.floors = floors;
+    }
     public void addFloor(Floor floor) {
         floors.add(floor);
     }
