@@ -2,7 +2,7 @@
 # Building info
 ### Repozytorium na projekt z inżynierii oprogramowania grupy I2-1-Alfa (BuildingInfo).
 ## Opis Projektu:
-Dla administratorów budynków, którzy pragną optymalizować koszty zarządzania budynkami. Nasza aplikacja Building Info umożliwi pozyskanie informacji o parametrach budynku na poziomie pomieszczeń, kondygnacji oraz całych budynków. Aplikacja będzie dostępna poprzez GUI a także jako zdalne API dzięki czemu można ją zintegrować z istniejącymi narzędziami.
+Dla administratorów budynków, którzy pragną optymalizować koszty zarządzania budynkami. Nasza aplikacja Building Info umożliwi pozyskanie informacji o parametrach budynku na poziomie pomieszczeń, kondygnacji oraz całych budynków. Aplikacja będzie dostępna jako zdalne API dzięki czemu można ją zintegrować z istniejącymi narzędziami.
 ## Struktura danych:
 * Lokalizacja to budynek, poziom, lub pomieszczenie  
 * Budynek może składać się z poziomów, a te z pomieszczeń  
@@ -36,6 +36,8 @@ Następnie należy wpisać **ht<span>tp://</span>localhost:8080/KOMENDA**. Przy 
 **getArea/{id}** - zwraca powierzchnię lokalizacji o podanym numerze id,  
 **getCube/{id}** - zwraca kubaturę lokalizacji o podanym numerze id,  
 **getLightPerArea/{id}** - zwraca moc oświetlania w przeliczeniu na jednostkę powierzchni lokalizacji o podanym numerze id.
+**getHeatingPerCube/{id}** - zwraca zużycie energii na ogrzewanie w przeliczeniu na jednostkę objętości lokalizacji o podanym numerze id.
+**getHeatingAboveLevel/{id}/{level}** - zwraca pomieszczenia w budynku o podanym id, które przekraczają określony poziom zużycia energii cieplnej na jednostkę objętości podany jako parametr. 
 
 ## Diagram UML:
 ![Diagram.png](https://github.com/jan-szczuka5/io-projekt/blob/main/Diagram.png)
