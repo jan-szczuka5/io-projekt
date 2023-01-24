@@ -55,7 +55,7 @@ public class BuildingInfoController
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
             logger.info("Wrong id");
-            return "Wrong id";
+            return "{\"error\": \"Wrong id\"}";
         }
         String result = String.valueOf(location.getArea());
         logger.info("Area calculated successfully: " + result);
@@ -84,7 +84,7 @@ public class BuildingInfoController
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
             logger.info("Wrong id");
-            return "Wrong id";
+            return "{\"error\": \"Wrong id\"}";
         }
         String result = String.valueOf(location.getCube());
         logger.info("Cube calculated successfully: " + result);
@@ -113,7 +113,7 @@ public class BuildingInfoController
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
             logger.info("Wrong id");
-            return "Wrong id";
+            return "{\"error\": \"Wrong id\"}";
         }
         String result = String.valueOf(location.getLight()/location.getArea());
         logger.info("Light per area calculated successfully: " + result);
@@ -142,7 +142,7 @@ public class BuildingInfoController
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
             logger.info("Wrong id");
-            return "Wrong id";
+            return "{\"error\": \"Wrong id\"}";
         }
         String result = String.valueOf(location.getHeating()/location.getCube());
         logger.info("Heating per cube calculated successfully: " + result);
@@ -172,22 +172,19 @@ public class BuildingInfoController
         Location location = buildingInfo.findSpecificLocationById(Integer.parseInt(id));
         if(location == null) {
             logger.info("There is no such location");
-            return "Wrong id";
+            return "{\"error\": \"Wrong id\"}";
         } else {
             if (!(location instanceof Building)){
                 logger.info("Id doesn't belong to building");
-                return "Wrong id";
+                return "{\"error\": \"Wrong id\"}";
             }
         }
 
         logger.info("Finding heating above level for: " + id);
         Building building = (Building) location;
         List<Room> results = buildingInfo.findHeatingAboveLevel(building, Float.parseFloat(level));
-        if(results == null){
-            return null;
-        }
 
-        logger.info("Heating above level found");
+        logger.info("Heating above level search ended");
         ObjectMapper mapper = new ObjectMapper();
         String roomsJson = "[";
         try {
@@ -203,8 +200,7 @@ public class BuildingInfoController
             roomsJson = roomsJson.substring(0, roomsJson.length() - 1);
             roomsJson += "]";
         }
-
-        // Not finished
+        
         return roomsJson;
     }
 
