@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RestController
-@RequestMapping(value = "/buildinginfo", produces = "application/json")
 
 /**
  * This class is responsible for handling requests
@@ -29,12 +27,12 @@ import java.util.List;
  * @version 1.0
  */
 
+@RestController
+@RequestMapping(value = "/buildinginfo", produces = "application/json")
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
-    @PostMapping("/getArea/{id}")
-    @ResponseBody
     
     /**
      * Calculates the total area of localization
@@ -45,7 +43,9 @@ public class BuildingInfoController
      *
      * @return total area of the chosen location
      */
-    
+
+    @PostMapping("/getArea/{id}")
+    @ResponseBody
     public String GetArea(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
@@ -62,8 +62,6 @@ public class BuildingInfoController
         return result;
     }
 
-    @PostMapping("/getCube/{id}")
-    @ResponseBody
     
      /**
      * Calculates the total cube of localization
@@ -74,8 +72,10 @@ public class BuildingInfoController
      *
      * @return total cube of the chosen location
      */
-    
-    public String GetCube(@RequestBody String json, @PathVariable String id) {
+
+     @PostMapping("/getCube/{id}")
+     @ResponseBody
+     public String GetCube(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
@@ -91,8 +91,6 @@ public class BuildingInfoController
         return result;
     }
 
-    @PostMapping("/getLightPerArea/{id}")
-    @ResponseBody
     
      /**
      * Calculates the total lighting power per area of localization
@@ -103,8 +101,10 @@ public class BuildingInfoController
      *
      * @return total lighting power per area of the chosen location
      */
-    
-    public String GetLightPerArea(@RequestBody String json, @PathVariable String id) {
+
+     @PostMapping("/getLightPerArea/{id}")
+     @ResponseBody
+     public String GetLightPerArea(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
@@ -120,8 +120,7 @@ public class BuildingInfoController
         return result;
     }
 
-    @PostMapping("/getHeatingPerCube/{id}")
-    @ResponseBody
+
     
      /**
      * Calculates the energy consumption for heating power per cube of localization
@@ -132,8 +131,10 @@ public class BuildingInfoController
      *
      * @return energy consumption for heating power per cube of the chosen location
      */
-    
-    public String GetHeatingPerCube(@RequestBody String json, @PathVariable String id) {
+
+     @PostMapping("/getHeatingPerCube/{id}")
+     @ResponseBody
+     public String GetHeatingPerCube(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
@@ -149,8 +150,6 @@ public class BuildingInfoController
         return result;
     }
 
-    @PostMapping("/getHeatingAboveLevel/{id}/{level}")
-    @ResponseBody
     
      /**
      * Finds rooms in building that exceed a certain level of heat consumption
@@ -162,8 +161,10 @@ public class BuildingInfoController
      *
      * @return json array representation of rooms that exceed provided level of heat consumption
      */
-    
-    public String GetHeatingAboveLevel(@RequestBody String json, @PathVariable String id, @PathVariable String level) {
+     
+     @PostMapping("/getHeatingAboveLevel/{id}/{level}")
+     @ResponseBody
+     public String GetHeatingAboveLevel(@RequestBody String json, @PathVariable String id, @PathVariable String level) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
         buildingInfo.loadALlBuildingsFromJson(json);
@@ -200,7 +201,7 @@ public class BuildingInfoController
             roomsJson = roomsJson.substring(0, roomsJson.length() - 1);
             roomsJson += "]";
         }
-        
+
         return roomsJson;
     }
 
