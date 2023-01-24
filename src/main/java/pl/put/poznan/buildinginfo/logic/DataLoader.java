@@ -7,8 +7,25 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class loads data from JSON 
+ *
+ * @author julia-bit
+ * @author jan-szczuka5
+ * @author Johnybonny
+ * @author hannapieniazek
+ * @version 1.0
+ */
+
 public class DataLoader {
 
+     /**
+     * This function loads data from JSON
+     *
+     * @param jsonString JSON string
+     * @return list of buildings from JSON
+     */
+    
     public List<Building> loadDataFromJson(String jsonString) throws JSONException {
         JSONObject obj = new JSONObject(jsonString);
 
