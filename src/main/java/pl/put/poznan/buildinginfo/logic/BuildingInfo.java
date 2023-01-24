@@ -9,12 +9,28 @@ import pl.put.poznan.buildinginfo.rest.BuildingInfoController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This is the main class of application 
+ *
+ * @author julia-bit
+ * @author jan-szczuka5
+ * @author Johnybonny
+ * @author hannapieniazek
+ * @version 1.0
+ */
+
 public class BuildingInfo
 {
     private List<Building> allBuildings;
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfo.class);
 
-
+    /**
+     * This function finds the location by its id
+     *
+     * @param id location id
+     * @return null
+     */
+    
     public Location findSpecificLocationById(int id)
     {
         logger.debug("Search for location started");
@@ -41,6 +57,12 @@ public class BuildingInfo
         }
         return null;
     }
+    
+     /**
+     * This function loads all buildings from JSON string 
+     *
+     * @param jsonString JSON data string 
+     */
 
     public void loadALlBuildingsFromJson(String jsonString)
     {
@@ -54,6 +76,14 @@ public class BuildingInfo
         }
     }
 
+     /**
+     * This function finds the rooms where the level of heating is exceeded 
+     *
+     * @param b building 
+     * @param level maximum quantity of energy which can be used for heating
+     * @return list of rooms in the building b where the level of heating is exceeded
+     */
+    
     public List<Room> findHeatingAboveLevel(Building b, float level)
     {
         List<Room> rooms = new ArrayList<>();
