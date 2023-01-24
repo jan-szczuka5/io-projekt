@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>pl.put.poznan.buildinginfo.logic.Building</OriginalElement>
+  <nodes>
+    <node x="-40.411348740944874" y="571.0">pl.put.poznan.buildinginfo.logic.Room</node>
+    <node x="180.41069248212125" y="571.0">pl.put.poznan.buildinginfo.logic.Floor</node>
+    <node x="605.3903734887078" y="1122.3639455782316">pl.put.poznan.buildinginfo.logic.DataLoader</node>
+    <node x="481.7534011649964" y="571.0">pl.put.poznan.buildinginfo.logic.Building</node>
+    <node x="-407.5336322869955" y="703.0">pl.put.poznan.buildinginfo.rest.BuildingInfoController</node>
+    <node x="-413.5336322869955" y="929.79694538503">pl.put.poznan.buildinginfo.logic.BuildingInfo</node>
+    <node x="-318.52233528803015" y="416.02391629297455">pl.put.poznan.buildinginfo.logic.Location</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pl.put.poznan.buildinginfo.rest.BuildingInfoController" target="pl.put.poznan.buildinginfo.logic.BuildingInfo" relationship="CREATE">
+      <point x="0.0" y="83.5" />
+      <point x="-247.5336322869955" y="929.79694538503" />
+      <point x="-50.427963665632035" y="-72.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Building" target="pl.put.poznan.buildinginfo.logic.Floor" relationship="DEPENDENCY">
+      <point x="-64.0" y="-149.5" />
+      <point x="513.7534011649964" y="747.4421768707484" />
+      <point x="214.07735914878793" y="747.4421768707484" />
+      <point x="-67.33333333333331" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Floor" target="pl.put.poznan.buildinginfo.logic.Location" relationship="REALIZATION">
+      <point x="67.33333333333337" y="-149.5" />
+      <point x="348.7440258154546" y="343.16780045351476" />
+      <point x="-209.02233528803015" y="343.16780045351476" />
+      <point x="36.5" y="82.99999999999994" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Floor" target="pl.put.poznan.buildinginfo.logic.Room" relationship="TO_MANY">
+      <point x="0.0" y="-149.5" />
+      <point x="281.41069248212125" y="684.2380952380953" />
+      <point x="32.588651259055126" y="684.2380952380953" />
+      <point x="0.0" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.DataLoader" relationship="CREATE">
+      <point x="108.66666666666663" y="-72.5" />
+      <point x="-141.86696562032887" y="1236.2018140589569" />
+      <point x="739.8903734887078" y="1236.2018140589569" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.Floor" relationship="DEPENDENCY">
+      <point x="-108.66666666666669" y="-72.5" />
+      <point x="-359.2002989536622" y="1110.6235827664398" />
+      <point x="214.07735914878793" y="1110.6235827664398" />
+      <point x="-67.33333333333331" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.Room" relationship="DEPENDENCY">
+      <point x="-108.66666666666669" y="-72.5" />
+      <point x="-359.2002989536622" y="987.4036281179139" />
+      <point x="-16.078015407611538" y="987.4036281179139" />
+      <point x="-48.666666666666664" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.DataLoader" target="pl.put.poznan.buildinginfo.logic.Room" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="739.8903734887078" y="1063.4760837070255" />
+      <point x="440.33333333333337" y="1063.4760837070255" />
+      <point x="440.33333333333337" y="1063.4760837070253" />
+      <point x="81.25531792572178" y="1063.4760837070253" />
+      <point x="48.66666666666666" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Building" target="pl.put.poznan.buildinginfo.logic.Floor" relationship="TO_MANY">
+      <point x="0.0" y="-149.5" />
+      <point x="577.7534011649964" y="914.8798185941043" />
+      <point x="281.41069248212125" y="914.8798185941043" />
+      <point x="0.0" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.rest.BuildingInfoController" target="pl.put.poznan.buildinginfo.logic.Room" relationship="DEPENDENCY">
+      <point x="160.0" y="-66.0" />
+      <point x="-73.0" y="0.0" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Room" target="pl.put.poznan.buildinginfo.logic.Location" relationship="REALIZATION">
+      <point x="0.0" y="-149.5" />
+      <point x="32.588651259055126" y="362.4875283446712" />
+      <point x="-209.02233528803015" y="362.4875283446712" />
+      <point x="36.5" y="82.99999999999994" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.Building" relationship="DEPENDENCY">
+      <point x="-108.66666666666669" y="-72.5" />
+      <point x="-359.2002989536622" y="1168.5827664399092" />
+      <point x="513.7534011649964" y="1168.5827664399092" />
+      <point x="-64.0" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Building" target="pl.put.poznan.buildinginfo.logic.Location" relationship="REALIZATION">
+      <point x="15.0" y="-149.5" />
+      <point x="592.7534011649964" y="328.16780045351476" />
+      <point x="-245.52233528803015" y="328.16780045351476" />
+      <point x="0.0" y="-83.0" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.DataLoader" target="pl.put.poznan.buildinginfo.logic.Floor" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="739.8903734887078" y="929.0294784580499" />
+      <point x="348.7440258154545" y="929.0294784580499" />
+      <point x="67.33333333333326" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.rest.BuildingInfoController" target="pl.put.poznan.buildinginfo.logic.Building" relationship="DEPENDENCY">
+      <point x="-88.48870300103465" y="-83.5" />
+      <point x="-336.02233528803015" y="381.29705215419506" />
+      <point x="562.7534011649964" y="381.29705215419506" />
+      <point x="-15.0" y="-149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.rest.BuildingInfoController" target="pl.put.poznan.buildinginfo.logic.Location" relationship="DEPENDENCY">
+      <point x="2.0112969989653493" y="-83.5" />
+      <point x="0.0" y="82.99999999999994" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.Floor" target="pl.put.poznan.buildinginfo.logic.Room" relationship="DEPENDENCY">
+      <point x="-67.33333333333331" y="-149.5" />
+      <point x="214.07735914878793" y="720.5" />
+      <point x="-16.078015407611538" y="720.5" />
+      <point x="-48.666666666666664" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.Building" relationship="TO_MANY">
+      <point x="0.0" y="-72.5" />
+      <point x="-250.5336322869955" y="1206.700680272109" />
+      <point x="577.7534011649964" y="1206.700680272109" />
+      <point x="0.0" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.DataLoader" target="pl.put.poznan.buildinginfo.logic.Building" relationship="CREATE">
+      <point x="0.0" y="-28.0" />
+      <point x="739.8903734887078" y="1037.6530612244896" />
+      <point x="641.7534011649964" y="1037.6530612244896" />
+      <point x="64.0" y="149.5" />
+    </edge>
+    <edge source="pl.put.poznan.buildinginfo.logic.BuildingInfo" target="pl.put.poznan.buildinginfo.logic.Location" relationship="DEPENDENCY">
+      <point x="-108.66666666666669" y="-72.5" />
+      <point x="-432.9605439048104" y="929.79694538503" />
+      <point x="-432.9605439048104" y="456.2063492063492" />
+      <point x="-282.02233528803015" y="456.2063492063492" />
+      <point x="-36.5" y="82.99999999999994" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7201291711517761" showDependencies="true" x="221.0" y="782.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
