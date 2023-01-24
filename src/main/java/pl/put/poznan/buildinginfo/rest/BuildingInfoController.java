@@ -18,12 +18,34 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/buildinginfo", produces = "application/json")
+
+/**
+ * This class is responsible for handling requests
+ *
+ * @author julia-bit
+ * @author jan-szczuka5
+ * @author Johnybonny
+ * @author hannapieniazek
+ * @version 1.0
+ */
+
 public class BuildingInfoController
 {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
     @PostMapping("/getArea/{id}")
     @ResponseBody
+    
+    /**
+     * Calculates the total area of localization
+     *
+     *
+     * @param json json representing the structure of the building(s)
+     * @param id id of the location to compute the total area of
+     *
+     * @return total area of the chosen location
+     */
+    
     public String GetArea(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
@@ -42,6 +64,17 @@ public class BuildingInfoController
 
     @PostMapping("/getCube/{id}")
     @ResponseBody
+    
+     /**
+     * Calculates the total cube of localization
+     *
+     *
+     * @param json json representing the structure of the building(s)
+     * @param id id of the location to compute the total cube of
+     *
+     * @return total cube of the chosen location
+     */
+    
     public String GetCube(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
@@ -60,6 +93,17 @@ public class BuildingInfoController
 
     @PostMapping("/getLightPerArea/{id}")
     @ResponseBody
+    
+     /**
+     * Calculates the total lighting power per area of localization
+     *
+     *
+     * @param json json representing the structure of the building(s)
+     * @param id id of the location to compute the total lighting power per area of
+     *
+     * @return total lighting power per area of the chosen location
+     */
+    
     public String GetLightPerArea(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
@@ -78,6 +122,17 @@ public class BuildingInfoController
 
     @PostMapping("/getHeatingPerCube/{id}")
     @ResponseBody
+    
+     /**
+     * Calculates the energy consumption for heating power per cube of localization
+     *
+     *
+     * @param json json representing the structure of the building(s)
+     * @param id id of the location to compute the energy consumption for heating power per cube of
+     *
+     * @return energy consumption for heating power per cube of the chosen location
+     */
+    
     public String GetHeatingPerCube(@RequestBody String json, @PathVariable String id) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
@@ -96,6 +151,18 @@ public class BuildingInfoController
 
     @PostMapping("/getHeatingAboveLevel/{id}/{level}")
     @ResponseBody
+    
+     /**
+     * Finds rooms in building that exceed a certain level of heat consumption
+     *
+     *
+     * @param json json representing the structure of the building(s)
+     * @param id id of the building to find rooms in it that exceed provided level of heat consumption
+     * @param level level of heat consumption to find rooms that exceed it
+     *
+     * @return json array representation of rooms that exceed provided level of heat consumption
+     */
+    
     public String GetHeatingAboveLevel(@RequestBody String json, @PathVariable String id, @PathVariable String level) {
         logger.info("Loading json file");
         BuildingInfo buildingInfo = new BuildingInfo();
